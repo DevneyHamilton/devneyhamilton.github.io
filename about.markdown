@@ -45,4 +45,4 @@ Technologies I've crossed paths with and delivered 1-3 features in:
 
 On a more philosophical note, I think in terms of systems, and see everything as connected. I understand how economic, political, and ideological forces shape what technology gets funded, and how data is likely be used to help or harm. My life experiences give me the (sometimes uncool) view that _people_ solve problems by caring for each other. For tech to 'do good', it needs to create or maintain access, help people spread out resources, and/or allow us shift our attention to caring for one another. I have a responsibility to those who came before and those who will come after to work for healthy communities and ecosystems. Holding that as an engineer has taken me on a the path less traveled by.
 
-Outside of software work, you can find me gardening, dancing, swimming, reading, making art, and gathering with my family, friends, and community.
+Outside of software work, you can find me gardening, dancing, swimming, reading, and gathering with my family, friends, and community.
