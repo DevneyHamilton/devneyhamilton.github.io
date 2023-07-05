@@ -1,45 +1,46 @@
 ---
 layout: post
 title:  "Sassafras Notes"
-categories: 
+categories:
 ---
 
-At [Sassafras Tech Collective][sassafras], I work on a team of highly skilled, scrappy technologists. We design and build technology for justice and joy, working with NGOs, academics, artists, and beyond. We've built small miracles on tinier budgets, over and over. ([Work with us][sassafras-contact]!)
+At [Sassafras Tech Collective][sassafras], I work on a team of highly skilled technologists who are scrappy as hell. We design and build technology for justice and joy, working with NGOs, academics, artists, and beyond. We've built small miracles on tinier budgets, over and over. ([Work with us][sassafras-contact]!)
 
-Here are a couple of favorite experiences:
+More on a few favorite experiences:
 
 ## TEXERE
-Artist [Indira Allegra][indira-allegra] approached Sassafras with initial concept designs for [TEXERE][texere] an immersive online experience of weaving. And not only that, people across time and space weaving grief tapestries, together. There was a chance to make a proposal for a $20k grant from the Ford Foundation. I scoped the tiniest MVP possible, said it was ambitious, wrote up a technical plan for it, Indira pitched it and secured the funding to get started.
+Artist [Indira Allegra][indira-allegra] approached Sassafras with concept designs for [TEXERE][texere], an immersive online experience of weaving. Here, people across time and space would weave grief tapestries together. I scoped the tiniest MVP possible, and wrote up a technical plan that Allegra used to secure starter funding. TEXERE continues to grow with Allegra's leadership and vision. Along the way I have held technical strategy and implementation. Building novel tech with an arts budget has been a beautiful, challenging adventure.
 
 What I did:
-- acted as solo engineer on team with a PM+UX designer, in close collaboration with our client
+- acted as solo engineer on team with a PM+UX designer, in close collaboration with Allegra
 - held technical strategy in collaborative efforts that secured initial and expansion funding for a novel software concept
-- engineered a consistently visually compelling digital tapestry composition from arbitrary image, text, and sound input
+- rapid-prototyped and engineered a consistently visually compelling digital tapestry composition from arbitrary image, text, and sound input
 - architected to allow digital tapestries to display in real time on personal devices and on unknown gallery hardware
 - communicated technical opportunities, choices, trade-offs, and costs to the client so they could make informed decisions
 
 Results:
-- launch at Minnesota Street Project and Ford Foundation led to funding for in-progress expansions in Viverse and additional art spaces
+- launch at Minnesota Street Project and Ford Foundation led to funding for in-progress expansions in Viverse and additional IRL exhibition spaces
 - Indira Allegra regularly reports back the deeply meaningful experiences people have with TEXERE
 
 ## Digital Privacy Rights Study for Consumer Reports Digital Lab
-Consumer Report's brand new Digital Lab needed a citizen science study on whether companies that are 'data brokers' under California law were following the California Consumer Privacy Act. This law requires companies that collect data allow people to opt out of the sale of their personal information. They were on a deadline to submit a report to the California Attorney General to influence enforcement guidelines, which meant the citizen science volunteers needed to start in a few weeks. And this was the first major initiative for the Lab - its chance to prove itself to CR at large and to funders.
+Consumer Report's brand new Digital Lab needed a citizen science study on whether companies that are 'data brokers' under California law were following the California Consumer Privacy Act. This law requires companies that collect data allow people to opt out of the sale of their personal information. CR was on a deadline to submit a report to the California Attorney General to influence enforcement guidelines, which meant the citizen science volunteers needed to start in a few weeks. And this was the first major initiative for the Lab - its chance to prove itself to CR at large and to funders.
 
 So we needed to facilitate 100s of volunteers making and reporting back on data rights requests to 100s of companies with disparate, slow, broken, and non-existant processes for fulfilling those requests. In other words, we had to build a consistent, _usable_ user experience on top of many inconsistent, less usable user experiences. At the same time we needed to collect data on their experience for analysis to influence California State digital privacy policy.
 
 What I did:
 - led technical strategy, study design, and data analysis with implementation and advising support from two coworkers
-- zero to one to 100x users in 8 weeks to meet the policy deadline
-- architected MVP using CR’s existing website for volunteer intake, SurveyMonkey webhooks, and a Rails backend to serve emails guiding users through a long, often confusing process
-- user input both drove the user’s experience and provided the data we needed
+- launched to 100s of users in 8 weeks to meet the policy deadline
+- architected an MVP using CR’s existing website for volunteer intake, SurveyMonkey for data collection, and a Rails backend to serve emails guiding users through a long, often confusing process
+- user input in SurveyMonkey both drove the user’s experience (facilitated by emails) and provided the data we needed to analyze
+- wrote an algorithm that randomly assigned test cases such that, with an unknown number of total tests, we maximized the number of companies for which we had 3 samples. This supported the data being analyzable.  
 
 Results:
-- CR was able to submit their [white paper][cr-paper] as planned to influence policy
-- a coworker was able to adapt the MVP for use in a water quality study
+- CR submitted their [white paper][cr-paper] as planned to influence policy
+- my coworker adapted the MVP for use in a water quality study
 - the Digital Lab has continued and grown as the Innovation Lab at CR
 
 ## QuickBooks Integration on Madeline for Seed Commons
-Seed Commons is a national network of cooperative loan funds. Madeline was a large, legacy Rails codebase that already supported several complex features like project management and custom forms creation, all governed by with hierarchical organization logic allowing customization. When I joined, a QuickBooks integration to automate interest transactions and ledger creation, with 2-way data syncing, was  missing features, especially lack of support for legacy data. We addressed these issues together as a team, rotating the tech lead role.
+Seed Commons is a national network of cooperative loan funds. Madeline was a large, legacy Rails codebase that already supported several complex features like project management and custom forms creation, all governed by a hierarchical organization logic allowing customization. When I joined, a QuickBooks integration to automate interest transactions and ledger creation, with 2-way data syncing, was  missing features, especially lack of support for legacy data. We addressed these issues together as a team, rotating the tech lead role. What I describe below was possible because of my teammate's leadership before me.
 
 What I did as tech lead:  
 - Analyzed and simplified the 2-way data sync flow and ledger calculation process to allow editing data in Madeline, support additional transaction types and attributes, sync missing supporting data types, and fix logic problems that were causing 100s of errors.
@@ -49,7 +50,7 @@ What I did as tech lead:
 
 Results:
 - The integration has run smoothly since, with a behind the scenes update to meet new QuickBooks requirements.
-- The administrative team at the client organization has been able to shift focus from data entry to strategy.
+- The administrative team at Seed Commons could shift their work from data entry to strategy.
 
 [sassafras]: https://www.sassafras.coop
 [sassafras-contact]:https://www.sassafras.coop/contact
