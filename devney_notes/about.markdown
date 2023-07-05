@@ -3,16 +3,13 @@ layout: page
 title: About
 permalink: /about/
 ---
-
 Software engineer. For the last 8 years I have been building and launching software with startups, Fortune 500s, non-profits, and movement organizers. Right now I do this with Sassafras Tech Collective, an incredibly smart, scrappy, and supportive team.
 
-I have so far focused on full-stack web/app development, with an emphasis on backend, data handling (schemas, APIs), 3rd party integrations and data syncing, and algorithm work. I expect that focus to shift as technology continues to change.
+I have so far focused on full-stack web/app development, with an emphasis on backend, data handling (schemas, APIs, data processing), 3rd party integrations and data syncing, and algorithm work. I expect that focus to shift as technology continues to change.
 
-But more honestly, I do the task at hand. Sometimes that means fixing the corners on a button so it looks _good_. Sometimes that means tweaking nginx defaults on the server. Sometimes it means Python scripting.
+But more honestly, I do the task at hand. Sometimes that means fixing CSS corner radiuses so the buttons look _good_. Sometimes that means tweaking nginx defaults on the server.
 
-I apply computer science fundamentals to learn new tools, codebases, and systems quickly and holistically. I make engineering choices based on users’ real needs and organizational context. I champion my collaborators and dance at small successes.
-
-I think in terms of systems, and see everything as connected. I understand how economic, political, and ideological forces make it difficult for me and others to make a living building software that is genuinely useful to our communities. Despite all that, I take seriously my responsibility to those who came before and those who will come after to work for healthy communities and ecosystems. I have dedicated my career to doing that with software, often taking the path less traveled by and working with scrappy teams on under-resourced projects. I thrive on teams that prioritize equity for people, and maintainability for software.
+I learn new tools, codebases, and systems quickly and holistically. I make engineering choices based on users’ real needs and organizational context. I champion my collaborators and dance at small successes. I thrive on teams that prioritize equity for people, and maintainability for software.
 
 I carry with me:
  - strong fundamentals in computer science from doing my MSCS and TA'ing at Stanford
@@ -41,5 +38,7 @@ Technologies I've crossed paths with and delivered features in:
 - Django
 - NodeJS
 - MongoDB
+
+On a more philosophical note, I think in terms of systems, and see everything as connected. I understand how economic, political, and ideological forces make it difficult for me and others to make a living building software that is genuinely useful to our communities. Despite all that, I take seriously my responsibility to those who came before and those who will come after to work for healthy communities and ecosystems. I have dedicated my career to doing that with software, often taking the path less traveled by.
 
 Outside of software work, you can find me gardening, swimming, reading, making art, and caring for my family, friends, and community.

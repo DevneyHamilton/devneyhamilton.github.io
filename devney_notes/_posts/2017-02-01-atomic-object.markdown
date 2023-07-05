@@ -19,25 +19,6 @@ I also wrote [blog posts][[atomic-object-spin]. A couple favorites:
 * [On Belonging in Tech at AndConf][andconf-blog]: looking back, this is the environment I try to create for others I work with
 
 
-
-Jekyll requires blog post files to be named according to the following format:
-
-`YEAR-MONTH-DAY-title.MARKUP`
-
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
 [atomic-object-home]: https://atomicobject.com
 [atomic-object-spin]: https://spin.atomicobject.com/author/devney-hamilton/
 [steelcase-work-advisor]: https://info.steelcase.com/workplace-advisor
