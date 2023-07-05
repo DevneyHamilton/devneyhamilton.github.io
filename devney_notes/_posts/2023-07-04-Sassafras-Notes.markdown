@@ -40,7 +40,7 @@ Results:
 - the Digital Lab has continued and grown as the Innovation Lab at CR
 
 ## QuickBooks Integration on Madeline for Seed Commons
-Seed Commons is a national network of cooperative loan funds. Madeline was a large, legacy Rails codebase that already supported several complex features like project management and custom forms creation, all governed by a hierarchical organization logic allowing customization. When I joined, a QuickBooks integration to automate interest transactions and ledger creation, with 2-way data syncing, was  missing features, especially lack of support for legacy data. We addressed these issues together as a team, rotating the tech lead role. What I describe below was possible because of my teammate's leadership before me.
+[Seed Commons][seed-commons] is a national network of cooperative loan funds. Madeline was a large, legacy Rails codebase that already supported several complex features like project management and custom forms creation, all governed by a hierarchical organization logic allowing customization. When I joined, a QuickBooks integration to automate interest transactions and ledger creation, with 2-way data syncing, was  missing features, especially lack of support for legacy data. We addressed these issues together as a team, rotating the tech lead role. What I describe below was possible because of my teammate's leadership before me.
 
 What I did as tech lead:  
 - Analyzed and simplified the 2-way data sync flow and ledger calculation process to allow editing data in Madeline, support additional transaction types and attributes, sync missing supporting data types, and fix logic problems that were causing 100s of errors.
@@ -57,3 +57,4 @@ Results:
 [indira-allegra]: https://www.indiraallegra.com
 [texere]: https://texere.space
 [cr-paper]: https://advocacy.consumerreports.org/wp-content/uploads/2020/09/CR_CCPA-Are-Consumers-Digital-Rights-Protected_092020_vf.pdf
+[seed-commons]: https://seedcommons.org
