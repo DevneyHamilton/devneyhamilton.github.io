@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bloomboard, Inc. Notes"
+title:  "Delivering Essential Features While Learning On the Job at Bloomboard"
 categories:
 ---
 

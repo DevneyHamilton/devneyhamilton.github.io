@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Architecting a Novel System with Tight Constraints"
+categories:
+---
+
+## Bringing to life TEXERE, a new kind of memorial.
+Artist [Indira Allegra][indira-allegra] approached Sassafras with concept designs for [TEXERE][texere], an immersive online experience of weaving. Here, people across time and space would weave grief tapestries together. I scoped the tiniest MVP possible, and wrote up a technical plan that Allegra used to secure starter funding. TEXERE continues to grow with Allegra's leadership and vision. Along the way I have held technical strategy and implementation. Building novel tech with an arts budget has been a beautiful, challenging adventure.
+
+What I did:
+- acted as solo engineer on team with a PM+UX designer, in close collaboration with Allegra
+- held technical strategy in collaborative efforts that secured initial and expansion funding for a novel software concept
+- rapid-prototyped and engineered a consistently visually compelling digital tapestry composition from arbitrary image, text, and sound input
+- architected to allow digital tapestries to display in real time on personal devices and on unknown gallery hardware
+- communicated technical opportunities, choices, trade-offs, and costs to the client so they could make informed decisions
+
+Results:
+- launch at Minnesota Street Project and Ford Foundation led to funding for in-progress expansions in Viverse and more arts exhibition spaces
+- Indira Allegra regularly reports back the deeply meaningful experiences people have with TEXERE
+
+
+[sassafras]: https://www.sassafras.coop
+[sassafras-contact]:https://www.sassafras.coop/contact
+[indira-allegra]: https://www.indiraallegra.com
+[texere]: https://texere.space
+[cr-paper]: https://advocacy.consumerreports.org/wp-content/uploads/2020/09/CR_CCPA-Are-Consumers-Digital-Rights-Protected_092020_vf.pdf
+[seed-commons]: https://seedcommons.org
