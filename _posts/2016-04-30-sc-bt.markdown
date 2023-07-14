@@ -1,11 +1,13 @@
 ---
 layout: post
-title:  "Algorithm Work with Cutting Edge Tech"
+title:  "Algorithm Work with Real Time Data and Cutting Edge Tech"
 categories:
 ---
 
-## Co-creating a Successful Initiative for a Fortune 500 Company
-At Atomic Object, I was the more junior member of a dynamic pairing duo tasked with figuring out how a Fortune 500 company could use Bluetooth location sensors to help workers navigate newly open, unassigned office space. **Our work evolved into a software product this company still sells today in 2023.** There was little documentation or writing on the web about these tools at the time, so most of what we learned was through experiments. I geeked out about graph theory and spearheaded the algorithm work, proposing two options we tested together. The algorithm work continued when we needed to incorporate 3rd party calendar data with location data to present relevant information to users. I gained confidence in how I test and prove concepts, and when push comes to shove, put real users' needs ahead of my beloved computer science theory (read more [here][core-location-blog]). I continued learning API design and I learned Rails and Swift development on this project.  
+## Co-creating a Successful New Tech Initiative for Steelcase
+At Atomic Object, I was the more junior member of a dynamic pairing duo tasked with figuring out how this large company (known then mainly for selling furniture) could use Bluetooth location sensors to help workers navigate newly open, unassigned office space. **Our work evolved into a software product this company still sells today in 2023, and helped Steelcase establish itself in tech.**
+
+There was little documentation or blogging about these Bluetooth sensors at the time, so most of what we learned was through experiments. I geeked out about graph theory and spearheaded the algorithm work, proposing two options we tested together. The algorithm work continued when we needed to incorporate 3rd party calendar data with location data to present relevant information to users. I gained confidence in how I test and prove concepts, and when push comes to shove, I put real users' needs ahead of my beloved computer science theory (read more [here][core-location-blog]). I continued learning API design and I learned Rails and Swift development on this project.  
 
 
 
