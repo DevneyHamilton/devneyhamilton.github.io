@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "An Example of How I Debug"
+categories:
+---
+
+Here's an example of a bug diagnosis that demonstrates my experience with proactive logging, automated error reporting, cross-functional collaboration, staging environments, test-driven development, simple solutions, code reviews, deployment, and 2-way data syncs between systems. I hope you’ll go along with me for the ride! There’s a celebration at the end.
+
+**Context:** Madeline is an application for managing equitable loans made to worker cooperatives. Madeline’s automated accounting system integrates with QuickBooks (QB) and syncs data 2 ways.
+
+**Bug report:** I receive a Slack message any time Madeline’s production server receives an unhandled error from QB. I got a Slack message reporting that QB was returning an error because it could not save changes to a transaction that had been ‘matched.’
+
+**Initial investigation:** I looked up what ‘matched’ meant in QB documentation. I learned QB has a feature allowing users to ‘match’ transactions in QB to transactions in external bank account records. Of course, QB must prevent changes on these ‘matched’ transactions for data integrity. When I let the accounting team know I was investigating, I asked if they could add context. They were newly using the ‘match’ feature in QB as they prepared to close their books for the year.
+
+I had previously added a logging feature to display any changes Madeline had made on its side to a transaction if QB returned an error when Madeline attempted to save it to QB. I was expecting to see the change to the transaction that QB could not accept. The log showed no changes on Madeline’s side of the interaction.
+
+**Stop-gap solution:**  At that point, I knew it would take more than one day to fix. I asked the accounting team if they could temporarily ‘unmatch’ the erroring transactions so they could continue their work while I continued mine. They could.
+
+**Troubleshooting:** Our staging environment had a copy of production data, but it did not have an external bank account I could use to exactly reproduce the error. Instead, I used the staging environment to carefully observe the same transaction that the QB error said could not be changed in QB. Using logs, the console, and UIs in Madeline and QB, I narrowed down which attributes might be changing where.
+
+**Diagnosis:** In the staging environment, I observed that a $0.00 amount that Madeline sent as a ‘Credit’  was reassigned ‘Debit’ after it was saved in QB. I also observed that if I attempted to make a $0.00 Credit in the QB UI, QB changed it to Debit, no matter what. I suspected that QB required all $0.00 amounts to be ‘Debit.’ I looked for a verification of this in documentation, but did not find it. I made the judgment call to proceed with this diagnosis based on my experiments.
+
+**Why was this not a problem before?** Prior to matching, QB had silently changed any $0.00 Credit it received from Madeline to be a Debit. When this change was silent, Madeline and QB could pass a $0.00 amount back and forth across the 2-way sync, changing $0.00 amounts from Credit to Debit and back without affecting users. After the accounting team started using the ‘matching’ QB feature, QB’s edit-prevention saw that the ‘Credit’ from Madeline differed from QB’s saved ‘Debit,’ and returned an error.
+
+**The fix:**  I updated and added automated tests to ensure Madeline set all $0.00 amounts to ‘Debit’ to be consistent with QB. I then changed 2 lines of code to pass these tests.
+
+**Resolution:**   I ensured all tests were passing. I opened a PR with an explanation of the bug and the fix. A coworker reviewed and approved my changes. I deployed to staging. There I QA’ed again to make sure Madeline was setting $0.00 amounts to be Debit to align with QB’s rules. I then deployed to production. I reported to the accounting team that the problem should be fixed, thanked them for their help, and asked them to report back. They did, and the loans that had the error were working fine again.
+
+**Celebration:** Success! We celebrated with some Slack emojis!!

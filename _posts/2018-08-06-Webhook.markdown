@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "Web Hooks: Designing and Publishing for a Deadline"
+categories:
+---
+
+Two researchers at Columbia University and University of Texas wanted to integrate their two diabetes self-management research tools for a new study. The researchers had a budget that covered just a few days total of my time, so I focused on keeping the scope narrow, and the solution modular and maintainable. This is one example of leveraging existing infrastructure to meet a new stakeholder need. Here's the technical plan I made and executed. I implemented publishing the webhook, and a collaborator at Columbia implemented consuming the webhook. Thanks to this plan, our work went smoothly and the new study ran on time.
+
+
+#### Real World Goal
+The EMA study needs to be able to send a text message to an existing Platano study participant 15-20 minutes after they log a meal to the Mealyzer application.
+
+#### Requirements
+- EMA needs to know when a meal is logged (but not the timezone), which will be represented by a UTC timestamp.
+- EMA will rely on receiving the user’s :phone_number from Mealyzer.
+- The content of the text message may depend on the meals’ :meal_kind attribute.
+- The language of the text will depend on the user’s  :preferred_locale attribute ("en" for English and "es" for Spanish).
+- The EMA project team needs to be able to later analyze Mealyzer data about the users and meals, using the :user_id and :meal_id attributes to cross-reference the data that EMA collects and data that Mealyzer collects.  
+- EMA should only be notified of meals logged by Platano users.
+User data must be encrypted when sent between applications.
+
+The content and timing of the text messages may also depend on participants’ previous interactions with EMA. They will not depend on other data in Mealyzer (e.g. meal ingredients, assessments, glucose data, reminders) or the user’s time of day when they logged the meal.
+
+#### Technical Approach
+The Mealyzer application will publish a web hook to notify the EMA application that a Platano user has logged a meal via an HTTPS API call. Using HTTPS will address the encryption requirement. EMA will implement a new HTTPS endpoint to subscribe to the webhook and receive the data it needs from Mealyzer. Mealyzer will implement calling the new EMA endpoint every time a Platano meal is logged.
+
+#### Changes to EMA application:
+The EMA application will need to implement an endpoint with the following specification:
+
+- URL:        ```https://{EMA DOMAIN}/event/create```
+- HTTP Method:        ```POST```
+- HTTP Headers        ```X-Api-Key```
+- URL Params: none
+-  Data Params:       ``` {
+   "name": "meal_log",
+   "timestamp": "2018-05-25T17:50:18.219Z",
+   "payload": {
+       "user": { id: 123,
+                phone: "212-776-2439"
+                preferred_locale: "es"
+                },
+       "meal": {
+			       id: 345,
+             kind: "lunch"
+           }
+         }
+       }
+    } ```
+
+- Success Response:        ```201 Created```
+- Error Responses:
+  -        ```400: Bad Request```
+  -       ```401: Unauthorized```
+  -        ```500: Server Error```
+
+#### Notes:
+- The meal kind values can be:
+  - breakfast
+  - morning_snack
+  - lunch
+  - afternoon_snack
+  - dinner
+  - after_dinner_snack
+- The user locals can be:
+  - "es" for Spanish
+  - "en" for English
+  - null if not set (this should not happen, but EMA should handle this case)
+
+- The timestamp will be in UTC.
+
+- EMA will need to set up SSL if it is not already set up.
+
+- EMA will need to implement authentication:
+Safely storing an api key value expected from Mealyzer
+Checking that the X-Api-Key sent with each request matches the expected api key.
+
+- EMA will parse the data sent with the above request for use in the EMA application.
+
+#### Changes to Mealyzer application:
+When a meal is logged, check if user has the Platano application. If so, make a call to the above EMA API endpoint with the appropriate data values.
+
+#### Other considerations:
+The EMA team needs to put their application on the Columbia-hosted server that Mealyzer and MODD are on. This is because it is a relatively convenient way to meet HIPAA requirements. This server needs to be upgraded before they can put their application on that server.
+
+The EMA team is investigating options for using Twilio. They may use the existing MODD Twilio account and set up. Mealyzer may also need a reverse proxy in order to have Twilio work on the same server.
+
+#### Risks
+There’s a small chance there are ways a user can log a meal that don’t perfectly align with saving to the database. We can manage this risk if it emerges by deciding how to handle those special cases.

@@ -21,7 +21,7 @@ My interest in making things people can use right now led me to focus on full-st
 - algorithm work
 - rapid prototyping
 
-I expect my focus to shift along with the technology needs of organizations serving the greater good.
+I expect my focus to shift along with the technology needs of organizations working to strengthen communities.
 
 Technologies I have worked with in depth:
 - Ruby on Rails
@@ -38,6 +38,7 @@ Technologies I've crossed paths with and delivered 1-3 features in:
 - OAuth
 - Django
 - NodeJS
+- CakePHP
 - MongoDB
 
 ## How I do it
